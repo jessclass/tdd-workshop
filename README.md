@@ -10,7 +10,7 @@ This course assumes basic knowledge of programming in Python, but not much else!
 ## System Requirements
 Some prerequisites for your system:
 *   Linux (samples in course use Ubuntu)
-*   *   If you're using Windows 10, you can run Linux natively using WSL! 
+    *   If you're using Windows 10, you can run Linux natively using WSL! 
         Installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 *   Python 3 (samples in course use Python 3.6)
 *   IDE of your choosing (e.g., VS Code, Sublime, Atom)
