@@ -96,6 +96,7 @@
 
     1.  Think about what test cases you need.
     2.  Write tests assuming that the feature exists.
+
             def test_remove_stock_available():
                 inv = Inventory()
                 assert inv.limit == 100
@@ -162,6 +163,7 @@
                 assert inv.total_stock() == 10
 
     3.  Write functional code to make those tests pass.
+
             class OutOfStockError(Exception):
                 pass
 
