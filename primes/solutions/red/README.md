@@ -25,18 +25,18 @@
                 assert is_prime(514229)
 
             def test_prime_composites():
-                assert not is_prime(2)
+                assert not is_prime(4)
                 assert not is_prime(100)
                 assert not is_prime(514230)
 
-2.  Run the tests, they will fail!
+3.  Run the tests, they will fail!
 
         pytest
 
-3.  This is expected behavior. We have written our tests, but the functions 
+4.  This is expected behavior. We have written our tests, but the functions 
     under test have not even been written yet!
 
-4.  Let's start writing some actual code.
+5.  Let's start writing some actual code.
 
         def is_prime(num):
             if num < 0:
@@ -48,12 +48,12 @@
             else:
                 return True
 
-5.  This definitely won't work, but let's just prove to ourselves that some
+6.  This definitely won't work, but let's just prove to ourselves that some
     of our tests are actually good now.
 
         pytest
 
-6.  We're still "red" because we haven't handled any of the interesting stuff!
+7.  We're still "red" because we haven't handled any of the interesting stuff!
     Let's fix that.
 
         def is_prime(num):
@@ -73,9 +73,48 @@
                 # If we get here, 1 and num are the only factors!
                 return True
 
-7.  That's all it should take to validate is\_prime. Is it the fastest code? No, but
+8.  That's all it should take to validate is\_prime. Is it the fastest code? No, but
     at least it's something.
 
         pytest
 
-8.  This puts us into Green! Good job!
+9.  This puts us into Green! Good job!
+
+10. Now, let's do this for the sum_of_primes function.
+
+11. First, let's write some tests for the sum_of_primes that will fail.
+
+        def test_sum_of_primes_empty():
+            assert sum_of_primes([]) == 0
+
+        def test_sum_of_primes_no_primes():
+            assert sum_of_primes([4, 6, 8, 100]) == 0
+
+        def test_sum_of_primes_some_primes():
+            assert sum_of_primes([2, 4, 5, 89, 100]) == 96
+
+        def test_sum_of_primes_all_primes():
+            assert sum_of_primes([2, 5, 7, 89]) == 103
+
+12. Run tests to make sure that they fail
+
+        pytest
+
+13. Implement sum_of_primes so that tests will pass
+
+        def sum_of_primes(seq):
+            if len(seq) == 0:
+                return 0
+
+            sum = 0
+            for val in seq:
+                if is_prime(val):
+                    sum += val
+            
+            return sum
+
+14. Check that tests are passing
+
+        pytest
+
+15. Tests should all pass, and we're back to green!
