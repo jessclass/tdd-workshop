@@ -1,6 +1,14 @@
 import math
 
 def is_prime(num):
+    """Determines whether a number is prime.
+
+    Args:
+        num: An integer value to check for primeness.
+    
+    Returns:
+        True if the number is prime, else False.
+    """
     if num < 2:
         return False
     else:
@@ -14,4 +22,13 @@ def is_prime(num):
         return True
 
 def sum_of_primes(seq):
+    """Calculates the sum of prime numbers in a sequence.
+
+    Args:
+        seq: The sequence containing numbers to evaluate for primeness and sum
+    
+    Returns:
+        The sum of all prime integers in the sequence. If the sequence is empty
+        or contains no primes, the return value will be 0.
+    """
     return sum(n for n in seq if is_prime(n))
