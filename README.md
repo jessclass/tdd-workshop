@@ -16,7 +16,7 @@ Some prerequisites for your system:
 *   IDE of your choosing (e.g., VS Code, Sublime, Atom)
 
 ## Pre-Workshop Setup
--   Download this repository to your local system. Here are a couple ways you 
+1.  Download this repository to your local system. Here are a couple ways you 
     can do that:
 
     Using git:
@@ -32,11 +32,11 @@ Some prerequisites for your system:
 
         https://github.com/supernaut11/tdd-workshop/archive/master.zip
 
--   Install the python3-venv package
+2.  Install the python3-venv package
 
         sudo apt install python3-venv
 
--   Run the initialization script
+3.  Run the initialization script
 
         ./init.sh
 
