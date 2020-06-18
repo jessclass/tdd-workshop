@@ -8,7 +8,7 @@ class InventoryRequestHandler(BaseHTTPRequestHandler):
             'price': 50.00,
             'quantity': 10
         })
-        self.send_response(200, data)
+        self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.send_header('Content-length', len(data))
         self.end_headers()
