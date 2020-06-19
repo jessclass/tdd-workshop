@@ -44,3 +44,17 @@ Some prerequisites for your system:
     create an alias or symbolic link to your Python 3 installation and name 
     it 'python3'.
 
+4.  Make sure the Python virtual environment is behaving as expected
+
+        . env/bin/activate
+
+    This should result in a string (env) appearing before your shell prompt.
+    Make sure that the Python modules we need are installed:
+
+        python3 -m pytest --version
+    
+    Should report something like:
+
+        This is pytest version 5.4.3, imported from <some path>
+        setuptools registered plugins:
+          pytest-cov-2.10.0 at <some path>
