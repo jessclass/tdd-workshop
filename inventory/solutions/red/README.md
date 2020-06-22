@@ -96,90 +96,91 @@
 # Student Activity
 1.  Implement remove_stock() using TDD!
 
-    1.  Think about what test cases you need.
-    2.  Write tests assuming that the feature exists.
+# Student Activity Solution
+1.  Think about what test cases you need.
+2.  Write tests assuming that the feature exists.
 
-            def test_remove_stock_available():
-                inv = Inventory()
-                assert inv.limit == 100
-                assert inv.total_stock() == 0
+        def test_remove_stock_available():
+            inv = Inventory()
+            assert inv.limit == 100
+            assert inv.total_stock() == 0
 
-                inv.set_stock('Pants', 50.00, 10)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 10
-                assert inv.total_stock() == 10
+            inv.set_stock('Pants', 50.00, 10)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 10
+            assert inv.total_stock() == 10
 
-                inv.remove_stock('Pants', 6)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 4
-                assert inv.total_stock() == 4
+            inv.remove_stock('Pants', 6)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 4
+            assert inv.total_stock() == 4
 
-            def test_remove_stock_out_of_stock():
-                inv = Inventory()
-                assert inv.limit == 100
-                assert inv.total_stock() == 0
+        def test_remove_stock_out_of_stock():
+            inv = Inventory()
+            assert inv.limit == 100
+            assert inv.total_stock() == 0
 
-                inv.set_stock('Pants', 50.00, 10)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 10
-                assert inv.total_stock() == 10
+            inv.set_stock('Pants', 50.00, 10)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 10
+            assert inv.total_stock() == 10
 
-                inv.remove_stock('Pants', 10)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 0
-                assert inv.total_stock() == 0
+            inv.remove_stock('Pants', 10)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 0
+            assert inv.total_stock() == 0
 
-                with pytest.raises(OutOfStockError):
-                    inv.remove_stock('Pants', 1)
-                
-                assert inv.total_stock() == 0
+            with pytest.raises(OutOfStockError):
+                inv.remove_stock('Pants', 1)
+            
+            assert inv.total_stock() == 0
 
-            def test_remove_stock_negative():
-                inv = Inventory()
-                assert inv.limit == 100
-                assert inv.total_stock() == 0
+        def test_remove_stock_negative():
+            inv = Inventory()
+            assert inv.limit == 100
+            assert inv.total_stock() == 0
 
-                inv.set_stock('Pants', 50.00, 10)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 10
-                assert inv.total_stock() == 10
+            inv.set_stock('Pants', 50.00, 10)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 10
+            assert inv.total_stock() == 10
 
-                with pytest.raises(InvalidQuantityError):
-                    inv.remove_stock('Pants', -5)
+            with pytest.raises(InvalidQuantityError):
+                inv.remove_stock('Pants', -5)
 
-                assert inv.total_stock() == 10
+            assert inv.total_stock() == 10
 
-            def test_remove_stock_no_such_item():
-                inv = Inventory()
-                assert inv.limit == 100
-                assert inv.total_stock() == 0
+        def test_remove_stock_no_such_item():
+            inv = Inventory()
+            assert inv.limit == 100
+            assert inv.total_stock() == 0
 
-                inv.set_stock('Pants', 50.00, 10)
-                assert inv.items['Pants']['price'] == 50.00
-                assert inv.items['Pants']['quantity'] == 10
-                assert inv.total_stock() == 10
+            inv.set_stock('Pants', 50.00, 10)
+            assert inv.items['Pants']['price'] == 50.00
+            assert inv.items['Pants']['quantity'] == 10
+            assert inv.total_stock() == 10
 
-                with pytest.raises(NoSuchItemError):
-                    inv.remove_stock('afdsasdf', 5)
+            with pytest.raises(NoSuchItemError):
+                inv.remove_stock('afdsasdf', 5)
 
-                assert inv.total_stock() == 10
+            assert inv.total_stock() == 10
 
-    3.  Write functional code to make those tests pass.
+3.  Write functional code to make those tests pass.
 
-            class OutOfStockError(Exception):
-                pass
+        class OutOfStockError(Exception):
+            pass
 
-            class NoSuchItemError(Exception):
-                pass
+        class NoSuchItemError(Exception):
+            pass
 
-            def remove_stock(self, name, quantity):
-                if quantity < 0:
-                    raise InvalidQuantityError(f'invalid quantity: {quantity}')
-                elif name not in self._items:
-                    raise NoSuchItemError(f'we do not sell: {name}')
-                elif self._items[name]['quantity'] - quantity < 0:
-                    raise OutOfStockError(f'insufficient stock to buy {quantity} of {name}')
-                else:
-                    self._items[name]['quantity'] -= quantity
+        def remove_stock(self, name, quantity):
+            if quantity < 0:
+                raise InvalidQuantityError(f'invalid quantity: {quantity}')
+            elif name not in self._items:
+                raise NoSuchItemError(f'we do not sell: {name}')
+            elif self._items[name]['quantity'] - quantity < 0:
+                raise OutOfStockError(f'insufficient stock to buy {quantity} of {name}')
+            else:
+                self._items[name]['quantity'] -= quantity
 
-2.  Great! We should be at green!
+4.  Great! We should be at green!
