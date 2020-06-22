@@ -9,9 +9,11 @@ This course assumes basic knowledge of programming in Python, but not much else!
 # Environment Setup
 ## System Requirements
 Some prerequisites for your system:
-*   Linux (samples in course use Ubuntu)
+*   Linux dev environment (samples in course use Ubuntu 18.04 LTS)
     *   If you're using Windows 10, you can run Linux natively using WSL! 
         Installation instructions [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+    *   If you want to create a VM, check out [this instructional video](https://www.youtube.com/watch?v=diIW3fgewhI)
+        on creating a VirtualBox VM for Ubuntu.
 *   Python 3 (samples in course use Python 3.6)
 *   IDE of your choosing (e.g., VS Code, Sublime, Atom)
 
