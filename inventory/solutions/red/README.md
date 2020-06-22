@@ -1,3 +1,4 @@
+# Lecture
 1.  Add initial tests for creating Inventory and setting stock:
 
         from inventory import Inventory, NoRoomError, InvalidQuantityError
@@ -92,7 +93,8 @@
 
         pytest
 
-5.  LAB: Implement remove_stock() using TDD!
+# Student Activity
+1.  Implement remove_stock() using TDD!
 
     1.  Think about what test cases you need.
     2.  Write tests assuming that the feature exists.
@@ -180,4 +182,4 @@
                 else:
                     self._items[name]['quantity'] -= quantity
 
-6.  Great! We should be at green!
+2.  Great! We should be at green!
